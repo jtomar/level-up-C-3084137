@@ -7,7 +7,11 @@ char *ordinal(int v)
 		 - this code won't run with out it!
 	 */
 	char *ch[4] = {"st", "nd", "rd", "th"};
-
+	if(v == 11 || v == 12 || v == 13)
+	{
+		return ch[3];
+	}
+	
 	if (v % 10 == 1)
 	{
 		return ch[0];
