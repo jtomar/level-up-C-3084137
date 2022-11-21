@@ -5,10 +5,10 @@
 char *left(char *s, int len)
 {
 	char *str;
-	str = (char *)malloc(sizeof(len + 1) * 1);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 	{
-		puts("memory allocation failed\n");
+		printf("memory allocation failed\n");
 		exit(1);
 	}
 	*str = '\0';
@@ -30,7 +30,7 @@ char *right(char *s, int len)
 {
 	char *str;
 	char *ptr = s + len;
-	str = (char *)malloc(sizeof(len + 1) * 1);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 	{
 		printf("memory allocation failed\n");
@@ -58,7 +58,7 @@ char *mid(char *s, int offset, int len)
 	char *ptr;
 	ptr = (s + offset);
 
-	str = (char *)malloc(sizeof(len + 1) * 1);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 	{
 		printf("memory allocation failed\n");
@@ -78,6 +78,7 @@ char *mid(char *s, int offset, int len)
 		len = len - 1;
 		ptr = ptr + 1;
 	}
+	// printf("\nhere is middle: %s\n", str);
 	return (str);
 }
 
@@ -88,6 +89,7 @@ int main()
 	printf("Original string: %s\n", string);
 	printf("Left %d characters: %s\n", 16, left(string, 16));
 	printf("Right %d characters: %s\n", 18, right(string, 18));
+
 	printf("Middle %d characters: %s\n", 11, mid(string, 13, 11));
 
 	return (0);
